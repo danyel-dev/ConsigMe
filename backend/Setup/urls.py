@@ -1,13 +1,9 @@
 from django.contrib import admin
-from rest_framework import routers
-from django.urls import include, path
-from .views import UserViewSet, GroupViewSet
+from django.urls import path
+from .views import CreateUser
 
-router = routers.DefaultRouter()
-router.register(r'users', UserViewSet)
-router.register(r'groups', GroupViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('register/', CreateUser.as_view()),
     path('admin/', admin.site.urls),
 ]
