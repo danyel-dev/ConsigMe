@@ -1,7 +1,7 @@
-import Index from "./Login/Index";
+import Login from "./Login/Login";
 import './global.css'
 
 
 export default function App() {
-  return <Index />;
+  return <Login />;
 }
