@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './style.css'
+import styles from './login.module.css'
 import Home from '../Home/Home'
 import axios from 'axios';
 
@@ -27,29 +27,45 @@ export default function Login() {
         e.preventDefault();
     }
 
-    if(!token) {
+    if(!token)
         return(
-            <main>
+            <main className={styles.mainComponent}>
                 <h1>ConsigMe</h1>
                 
-                <div id="message-error">
+                <div className={styles.messageError}>
                     <span className="material-symbols-outlined">cancel</span>
-                    <p>usuário ou senha incorretos</p>
+                    <p>Usuário ou senha incorretos</p>
                 </div>
                 
-                <form onSubmit={handleFormSubmit}>
-                    <input type="text" placeholder="Nome de usuário" value={username} onChange={handleChangeUsername} />
+                <form onSubmit={handleFormSubmit} className={styles.formLogin}>
+                    <input 
+                        type="text"
+                        className={styles.formInput}
+                        placeholder="Nome de usuário"
+                        value={username}
+                        onChange={handleChangeUsername} 
+                    />
 
-                    <div id="inputPassword-link">
-                        <input type="password" placeholder="Senha" value={password} onChange={handleChangePassword} />
-                        <small><a href="https://www.youtube.com/">Esqueceu a senha?</a></small>
+                    <div className={styles.divPasswordLink}>
+                        <input
+                            className={styles.formInput}
+                            type="password" placeholder="Senha"
+                            value={password}
+                            onChange={handleChangePassword}
+                        />
+                        
+                        <small className={styles.smallForgotPassword}>
+                            <a href="https://www.youtube.com/">Esqueceu a senha?</a>
+                        </small>
                     </div>
                     
-                    <button>Entrar</button>
+                    <button className={styles.formButtonSubmit}>Entrar</button>
                 </form>
 
-                <small id="link-to-register">Ainda não possui uma conta? <a href="https://www.google.com/">Crie uma</a></small>
+                <small className={styles.mainSmallToRegister}>Ainda não possui uma conta? 
+                    <a href="https://www.google.com/"> Crie uma</a>
+                </small>
             </main>
         ); 
-    } return <Home />
+    return <Home />
 };

@@ -10,14 +10,10 @@
     --purple-lighter: #9d55cd;
 }
 
-body {
+.mainComponent {
     background-color: var(--white-background);
-}
-
-main {
-    width: max-content;
+    width: 100%;
     height: 100vh;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,7 +21,7 @@ main {
     gap: 1.3em;   
 }
 
-main div#message-error {
+.messageError {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,16 +30,17 @@ main div#message-error {
     color: var(--font-message-error);
     background-color: var(--background-message-error);
     border-radius: 3px;
+    font-size: 14px;
 }
 
-main form {
+.formLogin {
     display: flex;
     flex-direction: column;
     gap: 0.5em;
     width: 300px;
 }
 
-form input {
+.formInput {
     border: 1px solid var(--border-input-black);
     border-radius: 5px;
     padding: 10px;
@@ -52,21 +49,21 @@ form input {
     width: 100%;
 }
 
-form input:hover {
+.formInput:hover {
     border: 1px solid var(--purple-lighter);
 }
 
-form div#inputPassword-link {
+.divPasswordLink {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
-form div#inputPassword-link small {
+.smallForgotPassword {
     margin: 3px 5px 0 0;
 }
 
-form button {
+.formButtonSubmit {
     font-size: 14px;
     border-radius: 5px;
     background-color: var(--purple-bold);
@@ -78,11 +75,11 @@ form button {
     transition: .3s all ease-in;
 } 
 
-form button:hover {
+.formButtonSubmit:hover {
     background-color: var(--purple-normal);
 }
 
-main small#link-to-register  {
+.mainSmallToRegister {
     margin-top: 1em;
     padding: 10px 20px;
     border: 1px solid var(--border-small-black);
