@@ -22,32 +22,64 @@ export default function Register() {
             <main className={styles.mainRegister}>
                 <form onSubmit={handleSubmitForm} className={styles.formRegister}>
                     <div className={styles.fullnameForm}>
-                        <div>
-                            <label htmlFor="firstname" className={styles.labelForm}>Nome</label>
+                        <div className={styles.iconInput}>
+                            <label htmlFor="firstname" className={styles.labelForm}>Nome *</label>
                             <input id="firstname" type="text" className={styles.inputForm} placeholder='Primeiro nome' />
+                            
+                            <span className={`material-symbols-outlined ${styles.icon}`}>
+                                person
+                            </span>
                         </div>
 
-                        <div>
-                            <label htmlFor="lastname" className={styles.labelForm}>Sobrenome</label>
+                        <div className={styles.iconInput}>
+                            <label htmlFor="lastname" className={styles.labelForm}>Sobrenome *</label>
                             <input id='lastname' type="text" className={styles.inputForm} placeholder='Último nome' />
+                        
+                            <span className={`material-symbols-outlined ${styles.icon}`}>
+                                person
+                            </span>
                         </div>
                     </div>
 
-                    <label htmlFor="email" className={styles.labelForm}>Email</label>
-                    <input id="email" type="email" className={styles.inputForm} placeholder='email@email.com' />
+                    <div className={styles.iconInput}>
+                        <label htmlFor="email" className={styles.labelForm}>Email *</label>
+                        <input id="email" type="email" className={styles.inputForm} placeholder='Ex: email@email.com' />
+
+                        <span className={`material-symbols-outlined ${styles.icon}`}>
+                            mail
+                        </span>
+                    </div>
                     
-                    <label htmlFor="username" className={styles.labelForm}>Nome de usuário</label>
-                    <input id='username' type="text" className={styles.inputForm} placeholder='Entre com um nome de usuário' />
+                    <div className={styles.iconInput}>
+                        <label htmlFor="username" className={styles.labelForm}>Nome de usuário *</label>
+                        <input id='username' type="text" className={styles.inputForm} placeholder='Digite um nome de usuário' />
 
-                    <label htmlFor="passwordOne" className={styles.labelForm}>Senha</label>
-                    <input id='passwordOne' type="password" className={styles.inputForm} placeholder='Informe uma senha' />
+                        <span className={`material-symbols-outlined ${styles.icon}`}>
+                            badge
+                        </span>
+                    </div>
 
-                    <label htmlFor="passwordTwo" className={styles.labelForm}>Confirmar senha</label>
-                    <input id='passwordTwo' type="password" className={styles.inputForm} placeholder='Repita novamente a senha' />
+                    <div className={styles.iconInput}>
+                        <label htmlFor="passwordOne" className={styles.labelForm}>Senha *</label>
+                        <input id='passwordOne' type="password" className={styles.inputForm} placeholder='Informe uma senha' />
+                        
+                        <span className={`material-symbols-outlined ${styles.icon}`}>
+                            lock
+                        </span>
+                    </div>
+
+                    <div className={styles.iconInput}>
+                        <label htmlFor="passwordTwo" className={styles.labelForm}>Confirmar senha *</label>
+                        <input id='passwordTwo' type="password" className={styles.inputForm} placeholder='Repita novamente a senha' />
+
+                        <span className={`material-symbols-outlined ${styles.icon}`}>
+                            lock
+                        </span>
+                    </div>
 
                     <div className={styles.submitDiv}>
                         <button className={styles.buttonForm}>Cadastrar</button>
-                        <small className={styles.small}>Já possui uma conta? <a href="#">Entre nela</a></small>
+                        <small className={styles.small}>Já possui uma conta? <a href="https://google.com">Entre nela</a></small>
                     </div>
                 </form>
             </main>
