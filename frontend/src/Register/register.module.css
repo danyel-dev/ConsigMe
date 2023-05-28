@@ -1,0 +1,24 @@
+.mainRegister {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formRegister {
+    width: 300px;
+}
+
+.labelForm {
+    font-size: 15px;
+}
+
+.inputForm {
+    display: block;
+    border: 1px solid rgba(0, 0, 0, .2);
+    padding: 10px;
+    width: 100%;
+    border-radius: 3px;
+    margin-bottom: 13px;
+}
