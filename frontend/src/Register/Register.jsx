@@ -4,55 +4,49 @@ import styles from './register.module.css'
 
 
 export default function Register() {
-    const [firstname, setFirstname] = useState("")
-    const [lastname, setLastname] = useState("")
-    const [email, setEmail] = useState("")
-    const [username, setUsername] = useState("")
-    const [password, setPassword] = useState("")
+    function useFormRegister(props) {
+        const [values, setValues] = useState(props.initialValues)
 
+        return {
+            values,
+            setValues,
+            handleChangeForm: (e) => {
+                const value = e.target.value
+                const name = e.target.name
 
-    const config = {
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Token ' + localStorage.getItem('token')
+                setValues({
+                    ...values,
+                    [name]: value
+                })
+            },
+            clearForm() {
+                setValues({})
+            }
         }
     }
 
     function handleSubmitForm(e) {
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }
+
         axios.post("http://127.0.0.1:8000/users/", 
         {
-            first_name: firstname,
-            last_name: lastname,
-            email: email,
-            username: username,
-            password: password,
-        }, 
-        config).then(response => {
-            console.log(response.data)
-        })  
+            first_name: useForm.values.firstname,
+            last_name: useForm.values.lastname,
+            email: useForm.values.email,
+            username: useForm.values.username,
+            password: useForm.values.password,
+        }, config)
         
         e.preventDefault()
     }
 
-    function handleChangeFirstname(e) {
-        setFirstname(e.target.value)
-    }
-
-    function handleChangeLastname(e) {
-        setLastname(e.target.value)
-    }
-
-    function handleChangeEmail(e) {
-        setEmail(e.target.value)
-    }
-
-    function handleChangeUsername(e) {
-        setUsername(e.target.value)
-    }
-
-    function handleChangePassword(e) {
-        setPassword(e.target.value)
-    }
+    const useForm = useFormRegister({
+        initialValues: {firstname: "", lastname: "", email: "", username: "", password: ""}
+    })
 
     return (
         <>
@@ -62,9 +56,9 @@ export default function Register() {
                         <div className={styles.iconInput}>
                             <label htmlFor="firstname" className={styles.labelForm}>Nome *</label>
                             <input 
-                                id="firstname" type="text" 
+                                id="firstname" type="text" name="firstname" 
                                 className={styles.inputForm} placeholder='Primeiro nome' 
-                                onChange={handleChangeFirstname} value={firstname} 
+                                onChange={useForm.handleChangeForm} value={useForm.values.firstname} 
                             />
                             
                             <span className={`material-symbols-outlined ${styles.icon}`}>
@@ -75,9 +69,9 @@ export default function Register() {
                         <div className={styles.iconInput}>
                             <label htmlFor="lastname" className={styles.labelForm}>Sobrenome *</label>
                             <input 
-                                id='lastname' type="text"
+                                id='lastname' type="text" name="lastname"
                                 className={styles.inputForm} placeholder='Último nome' 
-                                onChange={handleChangeLastname} value={lastname}
+                                onChange={useForm.handleChangeForm} value={useForm.values.lastname}
                             />
                         
                             <span className={`material-symbols-outlined ${styles.icon}`}>
@@ -89,9 +83,9 @@ export default function Register() {
                     <div className={styles.iconInput}>
                         <label htmlFor="email" className={styles.labelForm}>Email *</label>
                         <input 
-                            id="email" type="email"
+                            id="email" type="email" name="email"
                             className={styles.inputForm} placeholder='Ex: email@email.com' 
-                            onChange={handleChangeEmail} value={email}
+                            onChange={useForm.handleChangeForm} value={useForm.values.email}
                         />
 
                         <span className={`material-symbols-outlined ${styles.icon}`}>
@@ -102,9 +96,9 @@ export default function Register() {
                     <div className={styles.iconInput}>
                         <label htmlFor="username" className={styles.labelForm}>Nome de usuário *</label>
                         <input 
-                            id='username' type="text"
+                            id='username' type="text" name="username"
                             className={styles.inputForm} placeholder='Digite um nome de usuário' 
-                            onChange={handleChangeUsername} value={username}
+                            onChange={useForm.handleChangeForm} value={useForm.values.username}
                         />
 
                         <span className={`material-symbols-outlined ${styles.icon}`}>
@@ -115,9 +109,9 @@ export default function Register() {
                     <div className={styles.iconInput}>
                         <label htmlFor="passwordOne" className={styles.labelForm}>Senha *</label>
                         <input 
-                            id='passwordOne' type="password"
+                            id='passwordOne' type="password" name="password"
                             className={styles.inputForm} placeholder='Informe uma senha'
-                            onChange={handleChangePassword} value={password}    
+                            onChange={useForm.handleChangeForm} value={useForm.values.password}    
                         />
                         
                         <span className={`material-symbols-outlined ${styles.icon}`}>
