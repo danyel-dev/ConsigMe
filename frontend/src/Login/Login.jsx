@@ -63,7 +63,7 @@ export default function Login() {
                 </form>
 
                 <small className={styles.mainSmallToRegister}>Ainda não possui uma conta? 
-                    <a href="https://www.google.com/"> Crie uma</a>
+                    <a href="/register"> Crie uma</a>
                 </small>
             </main>
         ); 

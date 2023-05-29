@@ -133,7 +133,7 @@ export default function Register() {
 
                     <div className={styles.submitDiv}>
                         <button className={styles.buttonForm}>Cadastrar</button>
-                        <small className={styles.small}>Já possui uma conta? <a href="https://google.com">Entre nela</a></small>
+                        <small className={styles.small}>Já possui uma conta? <a href="/login">Entre nela</a></small>
                     </div>
                 </form>
             </main>
