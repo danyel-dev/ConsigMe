@@ -1,12 +1,13 @@
-import axios from "axios";
+// import axios from "axios";
 import { useState } from 'react';
 import styles from './register.module.css'
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Register() {
     function useFormRegister(props) {
         const [values, setValues] = useState(props.initialValues)
-
+        
         return {
             values,
             setValues,
@@ -24,22 +25,25 @@ export default function Register() {
             }
         }
     }
-
+    const navigate = useNavigate();
+    
     function handleSubmitForm(e) {
-        const config = {
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        }
+        navigate('/login');
+        
+        // const config = {
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     }
+        // }
 
-        axios.post("http://127.0.0.1:8000/users/", 
-        {
-            first_name: useForm.values.firstname,
-            last_name: useForm.values.lastname,
-            email: useForm.values.email,
-            username: useForm.values.username,
-            password: useForm.values.password,
-        }, config)
+        // axios.post("http://127.0.0.1:8000/users/", 
+        // {
+        //     first_name: useForm.values.firstname,
+        //     last_name: useForm.values.lastname,
+        //     email: useForm.values.email,
+        //     username: useForm.values.username,
+        //     password: useForm.values.password,
+        // }, config)
         
         e.preventDefault()
     }
