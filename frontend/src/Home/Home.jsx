@@ -1,29 +1,23 @@
-// import { useEffect, useState } from 'react';
-// import './style.css'
-// import axios from 'axios';
-import { Link } from 'react-router-dom'
+import styles from './home.module.css'
+
 
 export default function Home() {
-    // const [users, setUsers] = useState([]);
-
-    // useEffect(() => {
-    //     const config = {
-    //         headers: {
-    //             'Content-Type': 'application/json',
-    //             'Authorization': 'Token ' + localStorage.getItem('token')
-    //         }
-    //     }
-
-    //     axios.get("http://127.0.0.1:8000/users", config).then(response => {
-    //         setUsers(response.data)
-    //         console.log(users)
-    //     })                  
-    // }, [])
-
     return (
-        <div>
-            <p>oi</p>
-            <Link to="login">Sair</Link>
-        </div>
+        <>
+            <nav className={styles.navbar}>
+                <h1>ConsigMe</h1>
+
+                <ul className={styles.ul}>
+                    <li className={styles.li}>Home</li>
+                    <li className={styles.li}>Sobre</li>
+                    <li className={`${styles.li} ${styles.liDropdown}`}>
+                        Feito para você
+                        <span class="material-symbols-outlined">arrow_drop_down</span>
+                    </li>
+                    <li className={styles.li}>Funcionalidades</li>
+                    <li className={styles.li}>Sair</li>
+                </ul>
+            </nav>
+        </>
     );
 }
