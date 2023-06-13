@@ -8,6 +8,7 @@
 
 .ul {
     display: flex;
+    align-items: center;
     list-style-type: none;
     gap: 2.5em;
 }
@@ -20,5 +21,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: red;
+    position: relative;
+}
+
+.modalHeaderLink {
+    background-color: blueviolet;
+    width: 100px;
+    height: 50px;
+    top: 28px;
+    right: 7px;
+    border-radius: 3px;
+    position: absolute;
+    transition: 1s all;
 }
