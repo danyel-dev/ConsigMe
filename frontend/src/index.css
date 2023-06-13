@@ -5,6 +5,7 @@
     box-sizing: border-box;
     outline: none;
     font-family: sans-serif;
+    background-color: transparent;
 }
 
 a {
