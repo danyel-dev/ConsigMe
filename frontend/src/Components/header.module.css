@@ -2,8 +2,8 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: aqua;
-    padding: 15px;
+    background-color: whitesmoke;
+    padding: 10px;
 }
 
 .logoMenu {
@@ -29,7 +29,13 @@
 }
 
 .li {
+    color: #2b0b54;;
     cursor: pointer;
+    font-size: 14px;
+}
+
+.li:hover {
+    color: #9d55cd;
 }
 
 .liDropdown {
@@ -40,14 +46,24 @@
 }
 
 .modalHeaderLink {
-    background-color: blueviolet;
-    width: 100px;
-    height: 50px;
-    top: 28px;
-    right: 7px;
-    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #5c168d;;
+    width: max-content;
+    top: 30px;
+    right: -40px;
+    font-size: 13px;
+    border-radius: 2px 10px 2px 10px;
     position: absolute;
     transition: 1s all;
+    padding: 10px 20px;
+}
+
+.modalLink {
+    display: block;
+    color: white;
+    text-transform: uppercase;
 }
 
 @media (min-width: 750px) {
