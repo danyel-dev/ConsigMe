@@ -1,0 +1,26 @@
+.section {
+    width: 100%;
+    background-image: url("../img/revenda-de-produtos.png");
+    height: 70vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(50%);
+}
+
+/* .section_p {
+    width: 60%;
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.section_button {
+    font-weight: bold;
+    margin-top: 15px;
+    background-color: rgb(104, 31, 173);
+    color: white;
+    padding: 7px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 15px;
+} */
