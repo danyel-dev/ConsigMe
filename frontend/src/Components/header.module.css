@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;
 }
 
@@ -29,13 +29,14 @@
 }
 
 .li {
-    color: #2b0b54;;
+    color: whitesmoke;
+    font-weight: bold;
     cursor: pointer;
     font-size: 14px;
 }
 
 .li:hover {
-    color: #9d55cd;
+    color: rgb(126, 54, 219);
 }
 
 .liDropdown {

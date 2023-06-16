@@ -1,18 +1,26 @@
 .section {
-    width: 100%;
-    background-image: url("../img/revenda-de-produtos.png");
     height: 70vh;
+    background-image: url("../img/revenda-de-produtos.png");
     background-position: center;
     background-repeat: no-repeat;
-    filter: brightness(50%);
 }
 
-/* .section_p {
-    width: 60%;
-    color: rgba(0, 0, 0, 0.75);
-    font-size: 20px;
-    margin-top: 5px;
+.section_div {
+    width: 80%;
+    margin: 100px auto 0 auto;
 }
+
+.section_title {
+    font-size: 2em;
+    color: rgba(0, 0, 0, 0.884);
+}
+
+.section_p {
+    width: 50%;
+    color: rgb(224, 223, 223);
+    font-size: 20px;
+    margin-top: 3px;
+} 
 
 .section_button {
     font-weight: bold;
@@ -23,4 +31,4 @@
     border-radius: 3px;
     cursor: pointer;
     font-size: 15px;
-} */
+} 
