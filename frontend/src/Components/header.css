@@ -1,0 +1,50 @@
+.linkMenu {
+    display: block;
+    padding: .5em;
+    color: black;
+}
+
+.linkMenu:hover {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.logo {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    background-color: #e7e7e7;
+    padding: 10px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.menuOpen {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.btnButton {
+    display: none;
+} 
+ 
+@media (max-width: 300px) {
+    .menu {
+        display: none;        
+    }
+
+    .btnButton {
+        display: block;
+    }
+}

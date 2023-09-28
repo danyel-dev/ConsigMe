@@ -27,45 +27,45 @@ export default function Login() {
         e.preventDefault();
     }
 
-    if(!token)
-        return(
-            <main className={styles.mainComponent}>
-                <h1>ConsigMe</h1>
+    // if(!token)
+    //     return(
+    //         <main className={styles.mainComponent}>
+    //             <h1>ConsigMe</h1>
                 
-                <div className={styles.messageError}>
-                    <span className="material-symbols-outlined">cancel</span>
-                    <p>Usuário ou senha incorretos</p>
-                </div>
+    //             <div className={styles.messageError}>
+    //                 <span className="material-symbols-outlined">cancel</span>
+    //                 <p>Usuário ou senha incorretos</p>
+    //             </div>
                 
-                <form onSubmit={handleFormSubmit} className={styles.formLogin}>
-                    <input 
-                        type="text"
-                        className={styles.formInput}
-                        placeholder="Nome de usuário"
-                        value={username}
-                        onChange={handleChangeUsername} 
-                    />
+    //             <form onSubmit={handleFormSubmit} className={styles.formLogin}>
+    //                 <input 
+    //                     type="text"
+    //                     className={styles.formInput}
+    //                     placeholder="Nome de usuário"
+    //                     value={username}
+    //                     onChange={handleChangeUsername} 
+    //                 />
 
-                    <div className={styles.divPasswordLink}>
-                        <input
-                            className={styles.formInput}
-                            type="password" placeholder="Senha"
-                            value={password}
-                            onChange={handleChangePassword}
-                        />
+    //                 <div className={styles.divPasswordLink}>
+    //                     <input
+    //                         className={styles.formInput}
+    //                         type="password" placeholder="Senha"
+    //                         value={password}
+    //                         onChange={handleChangePassword}
+    //                     />
                         
-                        <small className={styles.smallForgotPassword}>
-                            <a href="https://www.youtube.com/">Esqueceu a senha?</a>
-                        </small>
-                    </div>
+    //                     <small className={styles.smallForgotPassword}>
+    //                         <a href="https://www.youtube.com/">Esqueceu a senha?</a>
+    //                     </small>
+    //                 </div>
                     
-                    <button className={styles.formButtonSubmit}>Entrar</button>
-                </form>
+    //                 <button className={styles.formButtonSubmit}>Entrar</button>
+    //             </form>
 
-                <small className={styles.mainSmallToRegister}>Ainda não possui uma conta? 
-                    <a href="/register"> Crie uma</a>
-                </small>
-            </main>
-        ); 
+    //             <small className={styles.mainSmallToRegister}>Ainda não possui uma conta? 
+    //                 <a href="/register"> Crie uma</a>
+    //             </small>
+    //         </main>
+    //     ); 
     return <Home />
 };
