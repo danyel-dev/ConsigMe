@@ -13,7 +13,7 @@ export default function Header() {
             <a className='logo' href="google.com">Logo</a>
 
             <nav id='nav' className='nav'>
-                <button className='btnButton' onClick={handleToggleMenu}>Menu</button>
+                <span className='btnButton' onClick={handleToggleMenu}></span>
 
                 <ul className={`menu${toggleMenu? 'Open': ''}`} id='menu'>
                     <li><a className='linkMenu' href="google.com">Sobre</a></li>
