@@ -1,11 +1,22 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './header.css'
 
 export default function Header() {
     const [toggleMenu, setToggleMenu] = useState(false)
+    
+    const [token, setToken] = useState('')    
+
+    useEffect(() => {
+        setToken(localStorage.getItem('token'))
+    }, [])
 
     function handleToggleMenu() {
         setToggleMenu(!toggleMenu)
+    }
+
+    function handleLogout() {
+        localStorage.removeItem('token')
+        setToken(localStorage.getItem('token'))
     }
 
     return(
@@ -19,7 +30,11 @@ export default function Header() {
                     <ul className={`menu${toggleMenu? 'Open': ''}`} id='menu'>
                         <li><a className='linkMenu' href="google.com">Sobre</a></li>
                         <li><a className='linkMenu' href="google.com">Contato</a></li>
-                        <li><a className='linkMenu' href="google.com">Sair</a></li>
+                        
+                        {token ? 
+                            <li><button className='linkMenu' onClick={handleLogout}>Sair</button></li>:
+                            <li><a className='linkMenu' href='/login'>Entrar</a></li>
+                        }
                     </ul>
                 </nav>
             </header>

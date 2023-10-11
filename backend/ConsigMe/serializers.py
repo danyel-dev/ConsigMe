@@ -3,22 +3,35 @@ from rest_framework import serializers
 from django.contrib.auth.hashers import make_password
 
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(
+        style={'input_type': 'password'},
         write_only=True,
-        required=True,
-        help_text='Leave empty if no change needed',
-        style={'input_type': 'password', 'placeholder': 'Password'}
+        label="Senha"
+    )
+
+    password_confirm = serializers.CharField(
+        style={'input_type': 'password'},
+        write_only=True,
+        label="Confirme a senha"
     )
 
     class Meta:
         model = User
-        fields = ['url','first_name', 'last_name', 'email', 'username', 'password', 'groups']
+        extra_kwargs = {'password': {'write_only': True}}
+        fields = ['url','first_name', 'last_name', 'email', 'username', 'password', 'password_confirm', 'groups']
 
 
     def create(self, validated_data):
-        validated_data['password'] = make_password(validated_data.get('password'))
-        return super(UserSerializer, self).create(validated_data)
+        password = self.validated_data['password']
+        password_confirm = self.validated_data['password_confirm']
+
+        if password != password_confirm:
+            raise serializers.ValidationError({'password': 'As senhas não são iguais.'})
+        User.set_password(password)
+        User.save()
+        
+        return User
 
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
